@@ -1,2 +1,2 @@
-# ProyectosJavaScript
-Uso de templates
+# Proyecto1 - JavaScript
+Implementado para hacer uso de templates.
