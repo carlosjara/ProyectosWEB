@@ -27,7 +27,10 @@ router.get('/delete/:id', function(req, res) {
 });
 
 router.post('/', function(req, res) {
-    db_hotel.insert(req.body.estado, req.body.inicio, req.body.fin, req.body.habitacion, req.body.usuario, function(results) {
+    var inicio = req.body.inicio_1 + "-" + req.body.inicio_2 + "-" + req.body.inicio_3;
+    var fin = req.body.fin_1 + "-" + req.body.fin_2 + "-" + req.body.fin_3;
+    
+    db_hotel.insert(req.body.estado, inicio, fin, req.body.habitacion, req.body.usuario, function(results) {
         res.redirect('/reservas');
     });
 });
