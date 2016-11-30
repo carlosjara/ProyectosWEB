@@ -16,5 +16,9 @@ namespace Proyecto2.services
             return context.Habitaciones.ToList();
         }
 
+        public Habitacion getById(int id)
+        {
+            return context.Habitaciones.Where(x => x.Habitacion_id == id).First();
+        }
     }
 }

@@ -16,5 +16,10 @@ namespace Proyecto2.services
             return context.Reservas.ToList();
         }
 
+        public Reserva getById(int id)
+        {
+            return context.Reservas.Where(x => x.reserva_id == id).First();
+        }
+
     }
 }

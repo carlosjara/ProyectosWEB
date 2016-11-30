@@ -15,6 +15,11 @@ namespace Proyecto2.services
         {
             return context.Usuarios.ToList();
         }
+        
+        public Usuario getById(int id)
+        {
+            return context.Usuarios.Where(x => x.usuario_id == id).First();
+        }
 
     }
 }

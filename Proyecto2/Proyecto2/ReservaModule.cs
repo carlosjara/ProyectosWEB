@@ -17,9 +17,15 @@ namespace Proyecto2
         public ReservaModule()
         {
             Get["/"] = _ => "Nada que ver aqui.";
+
             Get["/reservas"] = _ =>
             {
                 return Response.AsJson<List<Reserva>>(reservaService.getReservas()).WithHeader("Access-Control-Allow-Origin", "*");
+            };
+
+            Get["/reservas/{id}"] = parameters =>
+            {
+                return Response.AsJson<Reserva>(reservaService.getById((int)parameters.id)).WithHeader("Access-Control-Allow-Origin", "*");
             };
 
             Get["/usuarios"] = _ =>
@@ -27,9 +33,19 @@ namespace Proyecto2
                 return Response.AsJson<List<Usuario>>(usuarioService.getUsuarios()).WithHeader("Access-Control-Allow-Origin", "*");
             };
 
+            Get["/usuarios/{id}"] = parameters =>
+            {
+                return Response.AsJson<Usuario>(usuarioService.getById((int)parameters.id)).WithHeader("Access-Control-Allow-Origin", "*");
+            };
+
             Get["/habitaciones"] = _ =>
             {
                 return Response.AsJson<List<Habitacion>>(habitacionService.getHabitaciones()).WithHeader("Access-Control-Allow-Origin", "*");
+            };
+
+            Get["/habitaciones/{id}"] = parameters =>
+            {
+                return Response.AsJson<Habitacion>(habitacionService.getById((int)parameters.id)).WithHeader("Access-Control-Allow-Origin", "*");
             };
         }
     }
