@@ -8,4 +8,16 @@ router.get('/', function (req, res) {
     });
 });
 
+router.get('/new', function (req, res) {
+    res.render('form');
+});
+
+router.get('/delete/:id', function(req, res) {
+    var id = req.params.id;
+
+    db_hotel.delete(id, function(results) {
+        res.redirect('/reservas');
+    });
+});
+
 module.exports = router;
