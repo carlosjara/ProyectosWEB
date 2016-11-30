@@ -55,6 +55,12 @@ namespace Proyecto2
                 reservaService.insert(model);
                 return HttpStatusCode.OK;
             };
+
+            Get["/delete/{id}"] = parameters =>
+            {
+                reservaService.delete((int)parameters.id);
+                return HttpStatusCode.OK;
+            };
         }
     }
 }

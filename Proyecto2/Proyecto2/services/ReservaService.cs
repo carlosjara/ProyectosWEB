@@ -27,5 +27,11 @@ namespace Proyecto2.services
             context.SaveChanges();
         }
 
+        public void delete(int id)
+        {
+            Reserva reserva = context.Reservas.Where(r => r.reserva_id == id).FirstOrDefault<Reserva>();
+            context.Entry(reserva).State = System.Data.Entity.EntityState.Deleted;
+            context.SaveChanges();
+        }
     }
 }
