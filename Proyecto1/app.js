@@ -18,5 +18,7 @@ app.use(bodyParser.json());
 // Routes
 app.use('/', require('./server/routes/main'));
 app.use('/reservas', require('./server/routes/reservas'));
+app.use('/usuarios', require('./server/routes/usuarios'));
+app.use('/habitaciones', require('./server/routes/habitaciones'));
 
 app.listen(3000);
