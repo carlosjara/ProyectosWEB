@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-md-12 text-center"><h1>Nueva Reserva</h1></div>
+</div>
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <form id="reserva_add_form" method="post" action="/reservas">
+            <input type="hidden" name="id" value="{{reserva.id}}">
+
+            <div id="form-group-estado" class="form-group">
+                <label for="campo_estado">Estado</label>
+                <input name="estado" id="campo_estado" type="text" class="form-control" placeholder="Estado" value="{{reserva.estado}}" >
+            </div>
+            </br>
+
+            <div id="form-group-inicio" class="form-group">
+                <label for="campo_inicio">Fecha de inicio</label>
+                <input name="inicio" id="campo_inicio" type="text" class="form-control" placeholder="Inicio" value="{{reserva.inicio}}" >
+            </div>
+            </br>
+
+            <div id="form-group-fin" class="form-group">
+                <label for="campo_fin">Fecha final</label>
+                <input name="fin" id="campo_fin" type="text" class="form-control" placeholder="Fin" value="{{reserva.fin}}" >
+            </div>
+            </br>
+
+            <input type="submit" id="save_button" class="btn btn-primary" value="Save">
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+</div>

@@ -20,4 +20,10 @@ router.get('/delete/:id', function(req, res) {
     });
 });
 
+router.post('/', function(req, res) {
+    db_hotel.insert(req.body.estado, req.body.inicio, req.body.fin, function(results) {
+        res.redirect('/reservas');
+    });
+});
+
 module.exports = router;
