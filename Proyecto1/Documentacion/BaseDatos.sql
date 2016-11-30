@@ -25,12 +25,12 @@ insert into Hotel.Habitacion(Tipo_Habitacion, Estado_Habitacion) values (0,"Disp
 create table Hotel.Reserva(
 	reserva_id integer primary key auto_increment,
     estado_reserva varchar(32),
-    fecha_inicio date,
-    fecha_fin date,
+    fecha_inicio varchar(16),
+    fecha_fin varchar(16),
     habitacion integer , 
     usuario integer,
     constraint foreign key (usuario) references Hotel.Usuarios(usuario_id),
     constraint foreign key (habitacion) references Hotel.Habitacion(Habitacion_id)
 );
 
-insert into Hotel.Reserva (estado_reserva,fecha_inicio,habitacion,usuario) values ("Completa",'Jan-10-1999','Jan-10-1999',1,2);
+insert into Hotel.Reserva (estado_reserva,fecha_inicio,habitacion,usuario) values ("Completa",'2016-11-29','',1,1);
