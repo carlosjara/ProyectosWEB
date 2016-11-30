@@ -16,10 +16,12 @@ var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
 var reserva_list_component_1 = require('./reserva-list/reserva-list.component');
 var usuario_list_component_1 = require('./usuario-list/usuario-list.component');
+var habitacion_list_component_1 = require('./habitacion-list/habitacion-list.component');
 var direcciones = [
     { path: '', redirectTo: 'reserva', pathMatch: 'full' },
     { path: 'reserva', component: reserva_list_component_1.ReservaComponent },
-    { path: 'usuario', component: usuario_list_component_1.UsuarioComponent }
+    { path: 'usuario', component: usuario_list_component_1.UsuarioComponent },
+    { path: 'habitacion', component: habitacion_list_component_1.HabitacionComponent }
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -27,7 +29,7 @@ var AppModule = (function () {
     AppModule = __decorate([
         core_1.NgModule({
             imports: [forms_1.FormsModule, platform_browser_1.BrowserModule, http_1.HttpModule, router_1.RouterModule.forRoot(direcciones)],
-            declarations: [app_component_1.AppComponent, reserva_list_component_1.ReservaComponent, usuario_list_component_1.UsuarioComponent],
+            declarations: [app_component_1.AppComponent, reserva_list_component_1.ReservaComponent, usuario_list_component_1.UsuarioComponent, habitacion_list_component_1.HabitacionComponent],
             exports: [router_1.RouterModule],
             bootstrap: [app_component_1.AppComponent]
         }), 

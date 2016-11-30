@@ -12,30 +12,24 @@ var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 // Import RxJs required methods
 require("rxjs/Rx");
-var reservaService = (function () {
+var habitacionService = (function () {
     // Resolve HTTP using the constructor
-    function reservaService(http) {
+    function habitacionService(http) {
         this.http = http;
         // private instance variable to hold base url
         this.Url = 'http://localhost:9396';
     }
-    reservaService.prototype.getReserva = function () {
-        return this.http.get(this.Url + "/rest/reserva").map(function (r) { return r.json(); });
+    habitacionService.prototype.getHabitaciones = function () {
+        return this.http.get(this.Url + "/rest/habitaciones").map(function (r) { return r.json(); });
     };
-    reservaService.prototype.getReservaById = function (id) {
-        return this.http.get(this.Url + "/rest/reserva/" + id.toString()).map(function (r) { return r.json(); });
+    habitacionService.prototype.getHabitacionesById = function (id) {
+        return this.http.get(this.Url + "/rest/habitaciones/" + id.toString()).map(function (r) { return r.json(); });
     };
-    reservaService.prototype.deleteReserva = function (id) {
-        return this.http.delete(this.Url + "/rest/reserva/" + id.toString());
-    };
-    reservaService.prototype.save = function (reserva) {
-        console.log("Guardando En el Servicio", reserva);
-    };
-    reservaService = __decorate([
+    habitacionService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
-    ], reservaService);
-    return reservaService;
+    ], habitacionService);
+    return habitacionService;
 }());
-exports.reservaService = reservaService;
-//# sourceMappingURL=reserva.service.js.map
+exports.habitacionService = habitacionService;
+//# sourceMappingURL=habitacion.service.js.map

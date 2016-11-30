@@ -1,0 +1,25 @@
+<table align="center" style="border: 1px solid black;" >
+    <tr>
+        <th style="border: 1px solid black;">
+            # 
+        </th>
+        <th style="border: 1px solid black;">
+            Tipo Habitacion
+        </th>
+        <th style="border: 1px solid black;">
+            Cupo
+        </th>
+    </tr>
+    <tr *ngFor="let h of habitacionList" style="text-align:center; list-style-type: none;">
+        <td>
+            {{h.Habitacion_id}} 
+        </td>
+        <td>
+            {{h.Tipo_Habitacion}}
+        </td>
+        <td>
+            {{h.cupo}}
+        </td>
+    </tr>
+</table>
+<hr>

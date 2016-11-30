@@ -20,11 +20,8 @@ export class reservaService {
         return this.http.get(this.Url+"/rest/reserva/"+id.toString()).map(r => r.json());
     }
 
-    deleteReserva(id:number) : Observable<Reserva[]> {
-        return this.http.delete(this.Url+id.toString()) // ...using put request
-                         .map((res:Response) => res.json()) // ...and calling .json() on the response to return data
-                         .catch((error:any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
-    
+    deleteReserva(id:number) : Observable<void> {
+        return this.http.delete(this.Url+"/rest/reserva/"+id.toString());
     }
  
     save(reserva:Reserva):void{
