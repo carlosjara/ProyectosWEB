@@ -1,4 +1,5 @@
 ﻿using Nancy;
+using Nancy.ModelBinding;
 using Proyecto2.models;
 using Proyecto2.services;
 using System;
@@ -46,6 +47,13 @@ namespace Proyecto2
             Get["/habitaciones/{id}"] = parameters =>
             {
                 return Response.AsJson<Habitacion>(habitacionService.getById((int)parameters.id)).WithHeader("Access-Control-Allow-Origin", "*");
+            };
+
+            Post["/reservas"] = parameters =>
+            {
+                var model = this.Bind<Reserva>();
+                reservaService.insert(model);
+                return HttpStatusCode.OK;
             };
         }
     }

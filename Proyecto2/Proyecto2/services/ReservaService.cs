@@ -21,5 +21,11 @@ namespace Proyecto2.services
             return context.Reservas.Where(x => x.reserva_id == id).First();
         }
 
+        public void insert(Reserva r)
+        {
+            context.Reservas.Add(r);
+            context.SaveChanges();
+        }
+
     }
 }
