@@ -28,6 +28,16 @@ exports.getHabitaciones = function(complete) {
     });
 }
 
+exports.getHabitacionesLibres = function(complete) {
+    db.executeSQLStatement(function(connection){
+        connection.query('SELECT h.* FROM hotel.habitacion h LEFT JOIN hotel.reserva r on r.habitacion = h.habitacion_id WHERE r.habitacion IS NULL', 
+        	function(err, rows, fields){
+            if (err) throw err;
+            complete(rows,fields);
+        });
+    });
+}
+
 exports.insert = function(estado_reserva, fecha_inicio, fecha_fin, habitacion, usuario, complete) {
     var params = [estado_reserva, fecha_inicio, fecha_fin, habitacion, usuario];
     db.executeSQLStatement(function(connection){

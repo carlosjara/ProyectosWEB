@@ -15,7 +15,6 @@ router.get('/new', function (req, res) {
 router.get('/new/:user-:hab', function(req, res) {
     var usuario_id = req.params.user;
     var habitacion_id = req.params.hab;
-    //console.log(user_id,habitacion_id);
     res.render('form', {usuario: usuario_id, habitacion: habitacion_id});
 });
 
