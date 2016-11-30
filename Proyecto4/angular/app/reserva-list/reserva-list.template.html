@@ -1,0 +1,46 @@
+<table align="center" style="border: 1px solid black;" >
+    <tr>
+        <th style="border: 1px solid black;">
+            # 
+        </th>
+        <th style="border: 1px solid black;">
+            Estado
+        </th>
+        <th style="border: 1px solid black;">
+            Inicio
+        </th>
+        <th style="border: 1px solid black;">
+            Fin
+        </th>
+        <th style="border: 1px solid black;">
+            Habitación
+        </th>
+        <th style="border: 1px solid black;">
+            Usuario 
+        </th>
+    </tr>
+    <tr *ngFor="let r of reservaList" style="text-align:center; list-style-type: none;">
+        <td>
+            {{r.reserva_id}} 
+        </td>
+        <td>
+            {{r.estado_reserva}}
+        </td>
+        <td>
+            {{r.fecha_inicio}}
+        </td>
+        <td>
+            {{r.fecha_fin}}
+        </td>
+        <td>    
+            {{r.habitacion}}
+        </td>
+        <td>
+            {{r.usuario}} 
+        </td>
+        <td>
+            <a (click)="onReservaDelete(r.reserva_id)">Eliminar</a>
+        </td>
+    </tr>
+</table>
+<hr>

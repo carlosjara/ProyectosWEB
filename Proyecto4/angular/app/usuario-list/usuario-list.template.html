@@ -1,0 +1,31 @@
+<table align="center" style="border: 1px solid black;" >
+    <tr>
+        <th style="border: 1px solid black;">
+            # 
+        </th>
+        <th style="border: 1px solid black;">
+            Nombre
+        </th>
+        <th style="border: 1px solid black;">
+            Direccion
+        </th>
+        <th style="border: 1px solid black;">
+            Telefono
+        </th>
+    </tr>
+    <tr *ngFor="let u of usuarioList" style="text-align:center; list-style-type: none;">
+        <td>
+            {{u.usuario_id}} 
+        </td>
+        <td>
+            {{u.name}}
+        </td>
+        <td>
+            {{u.direccion}}
+        </td>
+        <td>
+            {{u.telefono}}
+        </td>
+    </tr>
+</table>
+<hr>
