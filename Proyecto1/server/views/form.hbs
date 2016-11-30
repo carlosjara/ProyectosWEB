@@ -6,6 +6,8 @@
     <div class="col-md-4">
         <form id="reserva_add_form" method="post" action="/reservas">
             <input type="hidden" name="id" value="{{reserva.id}}">
+            <input type="hidden" name="usuario" value="{{usuario}}">
+            <input type="hidden" name="habitacion" value="{{habitacion}}">
 
             <div id="form-group-estado" class="form-group">
                 <label for="campo_estado">Estado</label>

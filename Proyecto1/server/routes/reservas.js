@@ -12,6 +12,13 @@ router.get('/new', function (req, res) {
     res.render('form');
 });
 
+router.get('/new/:user-:hab', function(req, res) {
+    var usuario_id = req.params.user;
+    var habitacion_id = req.params.hab;
+    //console.log(user_id,habitacion_id);
+    res.render('form', {usuario: usuario_id, habitacion: habitacion_id});
+});
+
 router.get('/delete/:id', function(req, res) {
     var id = req.params.id;
 
@@ -21,7 +28,7 @@ router.get('/delete/:id', function(req, res) {
 });
 
 router.post('/', function(req, res) {
-    db_hotel.insert(req.body.estado, req.body.inicio, req.body.fin, function(results) {
+    db_hotel.insert(req.body.estado, req.body.inicio, req.body.fin, req.body.habitacion, req.body.usuario, function(results) {
         res.redirect('/reservas');
     });
 });

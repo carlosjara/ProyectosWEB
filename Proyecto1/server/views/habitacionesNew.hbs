@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-md-12 text-center"><h1>Seleccione una habitación</h1></div>
+</div>
+<div class="row">
+    <div class="col-md-12 text-center">
+        <a type="button" href="../../reservas" id="cancel_button" class="btn btn-danger">Cancelar</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-5"></div>
+    <div class="col-md-1 text-center">
+        <h3>#</h3>
+    </div>
+    <div class="col-md-1 text-center">
+        <h3>TIPO</h3>
+    </div>
+    <div class="col-md-1 text-center">
+        <h3>ESTADO</h3>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+
+<div class="row">
+    <ul class="list-group">
+        {{#each habitaciones}}
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-1 text-center">
+                    <h4>{{Habitacion_id}}</h4>
+                </div>
+                <div class="col-md-1 text-center">
+                    <h4>{{Tipo_Habitacion}}</h4>
+                </div>
+                <div class="col-md-1 text-center">
+                    <h4>{{Estado_Habitacion}}</h4>
+                </div>
+                <div class="col-md-1 text-center">
+                    <a type="button" href="../../reservas/new/{{../user}}-{{Habitacion_id}}" id="select_button" class="btn btn-success">Seleccionar {{../user}}</a>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+</div>

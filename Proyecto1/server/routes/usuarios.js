@@ -8,4 +8,10 @@ router.get('/', function (req, res) {
     });
 });
 
+router.get('/new', function (req, res) {
+    db_hotel.getUsuarios(function(rows, fields) {
+        res.render('usuariosNew', {usuarios: rows});
+    });
+});
+
 module.exports = router;
