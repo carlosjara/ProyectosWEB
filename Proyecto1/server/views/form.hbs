@@ -2,8 +2,13 @@
     <div class="col-md-12 text-center"><h1>Nueva Reserva</h1></div>
 </div>
 <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-6">
+    <div class="col-md-12 text-center">
+        <a type="button" href="../../reservas" id="cancel_button" class="btn btn-danger">Cancelar</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-5">
         <form id="reserva_add_form" class="form-inline" method="post" action="/reservas">
             <input type="hidden" name="id" value="{{reserva.id}}">
             <input type="hidden" name="usuario" value="{{usuario}}">
@@ -31,7 +36,7 @@
             </div>
             </br>
 
-            <input type="submit" id="save_button" class="btn btn-primary" value="Save">
+            <input type="submit" id="save_button" class="btn btn-success" value="Guardar">
         </form>
     </div>
     <div class="col-md-3"></div>
