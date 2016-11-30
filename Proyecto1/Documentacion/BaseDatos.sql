@@ -13,14 +13,14 @@ insert into Hotel.usuarios (name, direccion, telefono) values ("Rada","Av. 876 #
 create table Hotel.Habitacion(
 	Habitacion_id integer primary key auto_increment,
     Tipo_Habitacion boolean,
-    Estado_Habitacion varchar(32)
+    cupo int
 );
 /*
 	1 habitacion tipo suite y
 	0 habitacion tipo clasic
 */
-insert into Hotel.Habitacion (Tipo_Habitacion, Estado_Habitacion) values (1,"Reservada");
-insert into Hotel.Habitacion(Tipo_Habitacion, Estado_Habitacion) values (0,"Disponible");
+insert into Hotel.Habitacion (Tipo_Habitacion, cupo) values (1, 4);
+insert into Hotel.Habitacion(Tipo_Habitacion, cupo) values (0, 3);
 
 create table Hotel.Reserva(
 	reserva_id integer primary key auto_increment,
@@ -33,4 +33,4 @@ create table Hotel.Reserva(
     constraint foreign key (habitacion) references Hotel.Habitacion(Habitacion_id)
 );
 
-insert into Hotel.Reserva (estado_reserva,fecha_inicio,habitacion,usuario) values ("Completa",'2016-11-29','',1,1);
+insert into Hotel.Reserva (estado_reserva,fecha_inicio, fecha_fin, habitacion,usuario) values ("Completa",'2016-11-29','2016-11-30',1,1);
