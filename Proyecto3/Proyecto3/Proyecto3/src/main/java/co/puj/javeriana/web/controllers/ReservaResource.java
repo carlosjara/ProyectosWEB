@@ -9,6 +9,7 @@ import java.util.List;
  */
 
 @RestController
+@CrossOrigin
 public class ReservaResource {
 
     private final ReservaService reservaService;
@@ -16,7 +17,6 @@ public class ReservaResource {
     public ReservaResource(ReservaService reservaService) {
         this.reservaService = reservaService;
     }
-    @CrossOrigin(origins = "http://localhost:8000")
     @GetMapping(value = "/rest/reserva")
     public List<Reserva> getAll(){
         return reservaService.findAll();
@@ -34,7 +34,6 @@ public class ReservaResource {
         reservaService.delete(reserva_id);
     }
 
-    @CrossOrigin(origins = "http://localhost:8000")
     @GetMapping(value = "/rest/reserva/{reserva_id}")
     public  Reserva getById (@PathVariable("reserva_id") long reserva_id){
         return reservaService.findOne(reserva_id);

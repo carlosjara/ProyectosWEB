@@ -13,7 +13,7 @@ public class Habitacion {
     @Column
     private  int Tipo_Habitacion;
     @Column
-    private  String Estado_Habitacion;
+    private  int cupo;
 
     public long getHabitacion_id() {
         return Habitacion_id;
@@ -31,11 +31,11 @@ public class Habitacion {
         Tipo_Habitacion = tipo_Habitacion;
     }
 
-    public String getEstado_Habitacion() {
-        return Estado_Habitacion;
+    public int getCupo() {
+        return cupo;
     }
 
-    public void setEstado_Habitacion(String estado_Habitacion) {
-        Estado_Habitacion = estado_Habitacion;
+    public void setCupo(int cupo) {
+        this.cupo = cupo;
     }
 }

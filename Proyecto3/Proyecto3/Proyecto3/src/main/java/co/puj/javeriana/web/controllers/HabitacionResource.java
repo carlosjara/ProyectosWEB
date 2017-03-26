@@ -9,6 +9,7 @@ import java.util.List;
  */
 
 @RestController
+@CrossOrigin
 public class HabitacionResource {
 
     private final HabitacionService habitacionService;
@@ -16,12 +17,12 @@ public class HabitacionResource {
     public HabitacionResource(HabitacionService habitacionService) {
         this.habitacionService = habitacionService;
     }
-    @CrossOrigin(origins = "http://localhost:8000")
+
     @GetMapping(value = "/rest/habitaciones")
     public List<Habitacion> getAll(){
         return habitacionService.findAll();
     }
-    @CrossOrigin(origins = "http://localhost:8000")
+
     @GetMapping(value = "/rest/habitaciones/{habitacion_id}")
     public  Habitacion getById (@PathVariable("habitacion_id") long habitacion_id){
         return habitacionService.findOne(habitacion_id);

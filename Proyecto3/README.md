@@ -1,2 +1,2 @@
-# Proyecto2 - Java
+# Proyecto3 - Java
 Implementado como servidor usando JPA.
